@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 // Define fonts
 const nunitoSans = Nunito_Sans({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   variable: "--font-nunito-sans",
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
