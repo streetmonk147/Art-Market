@@ -3,25 +3,158 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary colors */
+  --primary-50: #f5f0ff;
+  --primary-100: #ede0ff;
+  --primary-200: #d9c2ff;
+  --primary-300: #c099ff;
+  --primary-400: #a368ff;
+  --primary-500: #8a3aff;
+  --primary-600: #7919ff;
+  --primary-700: #6609e6;
+  --primary-800: #5407ba;
+  --primary-900: #450a97;
+  --primary-950: #230051;
+  
+  /* Netflix Inspired Red */
+  --netflix-red-500: #e50914;
+  --netflix-red-600: #d30813;
+  --netflix-red-700: #b8000a;
+  
+  /* Warm colors */
+  --warm-50: #fef2f2;
+  --warm-100: #fee2e2;
+  --warm-200: #fecaca;
+  --warm-300: #fca5a5;
+  --warm-400: #f87171;
+  --warm-500: #ef4444;
+  --warm-600: #dc2626;
+  --warm-700: #b91c1c;
+  --warm-800: #991b1b;
+  --warm-900: #7f1d1d;
+  --warm-950: #450a0a;
+  
+  /* Cool colors */
+  --cool-50: #ecfeff;
+  --cool-100: #cffafe;
+  --cool-200: #a5f3fc;
+  --cool-300: #67e8f9;
+  --cool-400: #22d3ee;
+  --cool-500: #06b6d4;
+  --cool-600: #0891b2;
+  --cool-700: #0e7490;
+  --cool-800: #155e75;
+  --cool-900: #164e63;
+  --cool-950: #083344;
+  
+  /* Neutrals */
+  --neutral-50: #f9fafb;
+  --neutral-100: #f3f4f6;
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-400: #9ca3af;
+  --neutral-500: #6b7280;
+  --neutral-600: #4b5563;
+  --neutral-700: #374151;
+  --neutral-800: #1f2937;
+  --neutral-900: #111827;
+  --neutral-950: #030712;
+  
+  /* Netflix Dark */
+  --netflix-black: #141414;
+  --netflix-dark-gray: #181818;
+  --netflix-light-gray: #2f2f2f;
+  
+  /* App colors */
+  --background: var(--neutral-50);
+  --foreground: var(--neutral-900);
+  --muted: var(--neutral-100);
+  --muted-foreground: var(--neutral-600);
+  --accent: var(--netflix-red-500);
+  --accent-foreground: white;
+  --primary: var(--primary-600);
+  --primary-foreground: white;
+  --secondary: var(--cool-600);
+  --secondary-foreground: white;
+  --border: var(--neutral-200);
+  --card: white;
+  --card-foreground: var(--neutral-900);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--netflix-black);
+    --foreground: white;
+    --muted: var(--netflix-dark-gray);
+    --muted-foreground: var(--neutral-400);
+    --accent: var(--netflix-red-600);
+    --accent-foreground: white;
+    --primary: var(--primary-500);
+    --primary-foreground: white;
+    --secondary: var(--cool-500);
+    --secondary-foreground: white;
+    --border: var(--netflix-light-gray);
+    --card: var(--netflix-dark-gray);
+    --card-foreground: white;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-nunito-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl sm:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl sm:text-3xl;
+  }
+  
+  h4 {
+    @apply text-xl sm:text-2xl;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .netflix-gradient {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.3) 100%);
+  }
+  
+  .netflix-button {
+    @apply bg-netflix-red-500 hover:bg-netflix-red-600 text-white font-medium rounded px-5 py-3 transition-colors;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .container {
+    @apply mx-auto px-4 sm:px-6 max-w-7xl;
+  }
+  
+  .hero-title {
+    @apply text-5xl md:text-6xl lg:text-7xl font-black;
+  }
+  
+  .hero-subtitle {
+    @apply text-xl md:text-2xl lg:text-3xl font-normal;
   }
 }
