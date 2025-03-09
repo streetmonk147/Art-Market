@@ -151,10 +151,10 @@ body {
   }
   
   .hero-title {
-    @apply text-5xl md:text-6xl lg:text-7xl font-black;
+    @apply text-5xl md:text-6xl lg:text-7xl font-black mb-2;
   }
   
   .hero-subtitle {
-    @apply text-xl md:text-2xl lg:text-3xl font-normal;
+    @apply text-xl md:text-2xl lg:text-3xl font-normal mb-4;
   }
 }

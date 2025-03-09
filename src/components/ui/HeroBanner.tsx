@@ -21,7 +21,7 @@ export default function HeroBanner({
   secondaryButtonHref,
 }: HeroBannerProps) {
   return (
-    <div className="relative min-h-[85vh] overflow-hidden">
+    <div className="relative h-[90vh] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -37,8 +37,8 @@ export default function HeroBanner({
       </div>
 
       {/* Content */}
-      <div className="relative container h-full flex flex-col justify-center items-center text-center">
-        <div className="max-w-3xl space-y-6 py-20">
+      <div className="relative container mx-auto h-full flex items-center justify-center">
+        <div className="max-w-3xl space-y-8 text-center">
           <h1 className="hero-title text-white leading-tight">
             {title}
           </h1>
@@ -46,7 +46,7 @@ export default function HeroBanner({
             {subtitle}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Button 
               href={primaryButtonHref}
               variant="netflix"
